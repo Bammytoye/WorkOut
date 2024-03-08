@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useWorkoutContext } from '../hooks/UseWorkoutContent';
 
 
@@ -10,6 +10,16 @@ const Workoutform = () => {
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setError(null);
+        }, 5000); // 5 seconds
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [error]);
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -30,6 +40,7 @@ const Workoutform = () => {
             setEmptyFields(json.emptyFields)
             console.log('error', json.error)
         } 
+
         if (response.ok) {
             setTitle('')
             setLoad('')
@@ -41,7 +52,7 @@ const Workoutform = () => {
         }
     }
     return (
-        <div>
+        <div className=''>
             <form action="" 
                 className='flex flex-col mt-3' 
                 onSubmit={handleSubmit}
@@ -50,31 +61,31 @@ const Workoutform = () => {
                     Create a New Workout
                 </h3>
 
-                <label>
-                    Exercise Title: 
+                <label className='italic'>
+                    Workout Title: 
                 </label>
                 <input 
-                    className={`p-2 mt-1 mb-2 w-full bg-transparent border-b-2 border-r-2 border-t-2 outline-none ${emptyFields.includes('title') ? 'border-red-500':'border-black'} border-black rounded-md placeholder:text-gray-500 placeholder:italic`}
+                    className={`p-2 mt-1 mb-2 w-full bg-transparent border-b-2 border-r-2 outline-none ${emptyFields.includes('title') ? 'border-red-500':'border-black'} border-black rounded-md placeholder:text-gray-500 placeholder:italic`}
                     type="text" 
                     placeholder='Title' 
                     onChange={(e) => setTitle(e.target.value)} value={title}
                 />
             
-                <label>
+                <label className='italic'>
                     Load (in kg):
                 </label>
                 <input 
-                    className={`p-2 mt-1 mb-2 w-full bg-transparent border-b-2 border-r-2 border-t-2 outline-none ${emptyFields.includes('load') ? 'border-red-500':'border-black'} border-black rounded-md placeholder:text-gray-500 placeholder:italic`}
+                    className={`p-2 mt-1 mb-2 w-full bg-transparent border-b-2 border-r-2 outline-none ${emptyFields.includes('load') ? 'border-red-500':'border-black'} border-black rounded-md placeholder:text-gray-500 placeholder:italic`}
                     type="number" 
                     placeholder='Load' 
                     onChange={(e) => setLoad(e.target.value)} value={load}
                 />
 
-                <label>
+                <label className='italic'>
                     Reps: 
                 </label>
                 <input 
-                    className={`p-2 mt-1 mb-2 w-full bg-transparent border-b-2 border-r-2 border-t-2 outline-none ${emptyFields.includes('reps') ? 'border-red-500':'border-black'} border-black rounded-md placeholder:text-gray-500 placeholder:italic`}
+                    className={`p-2 mt-1 mb-2 w-full bg-transparent border-b-2 border-r-2 outline-none ${emptyFields.includes('reps') ? 'border-red-500':'border-black'} border-black rounded-md placeholder:text-gray-500 placeholder:italic`}
                     type="text" 
                     placeholder='Reps' 
                     onChange={(e) => setReps(e.target.value)} value={reps}
@@ -86,7 +97,7 @@ const Workoutform = () => {
                     Submit New Workout
                 </button>
                 {error && 
-                    <div className='p-4 bg-red-100 border border-red-500 rounded-md my-5'
+                    <div className='p-2 bg-red-100 text-center border-red-500 rounded-md my-2 font-italic: italic'
                         >
                             {error}
                         </div>}

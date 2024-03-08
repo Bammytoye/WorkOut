@@ -12,10 +12,10 @@ const Navbar = () => {
                 </div>
 
                 <div className='flex space-x-12 items-center'>
-                    <Link to='/Home' className='text-[#333] no-underline hover:underline'>Home</Link>
-                    <Link to='/AboutUs' className='text-[#333] no-underline hover:underline'>About Us</Link>
-                    <Link to='/Login' className='text-[#333] no-underline hover:underline'>Login</Link>
-                    <Link to='/CreateAccount' className='no-underline border rounded-md border-[#1aac83] p-2 bg-[#1aac83] text-white'>Create Account</Link>
+                    <Link to='/Home' className='text-gray-800 hover:text-gray-400 '>Home</Link>
+                    <Link to='/AboutUs' className='text-gray-800 hover:text-gray-400 '>About Us</Link>
+                    <Link to='/Login' className='text-gray-800 hover:text-gray-400 '>Login</Link>
+                    <Link to='/CreateAccount' className='border-r-2 border-l-2 rounded-md border-[#1aac83] px-2'>Sign In</Link>
                 </div>
             </div>
         </header>
