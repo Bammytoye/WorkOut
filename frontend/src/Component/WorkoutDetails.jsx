@@ -21,7 +21,7 @@ const WorkoutDetails = ({workout}) => {
 
 
     return (
-        <div className='flex justify-between items-center bg-white rounded-md mx-auto my-5 p-5  shadow'>
+        <div className='flex justify-between items-center bg-white rounded-md mx-auto my-3 p-5 shadow'>
             <div>
                 <h4 className='mb-3 text-lg text-[#1aac83]'> 
                     {workout.title}
