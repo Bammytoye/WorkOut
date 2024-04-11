@@ -39,6 +39,8 @@ const Login = () => {
                 placeholder='Enter your correct password'
                 className='p-2 mb-5 border-l-2 outline-none placeholder-italic border-b-2 border-black rounded-xl'
             />
+            {error && <div className="text-red-500 mt-[-20px] text-sm text-center">{error}</div>}
+
 
             <button
                 disabled={isLoading}
@@ -47,7 +49,6 @@ const Login = () => {
             >
                 {isLoading ? 'Logging in...' : 'Login'} {/* Change button text based on isLoading */}
             </button>
-            {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
             <p className='italic mx-auto mt-5'>
                 Don't have an account yet
