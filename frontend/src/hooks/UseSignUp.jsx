@@ -29,7 +29,7 @@ export const UseSignUp = () => {
             // Update the auth context
             dispatch({ type: 'LOGIN', payload: json });
             setIsLoading(false);
-        }
+        } 
     };    
 
     return { signUp, isLoading, error }; // Changed isloading to isLoading
