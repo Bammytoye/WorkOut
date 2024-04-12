@@ -5,15 +5,19 @@ const Schema = mongoose.Schema
 const workoutShema = new Schema ({
     title:{
         type: String,
-        require:true
+        required: true
     },
     reps:{
         type: Number,
-        require:true
+        required: true
     },
     load: {
         type: Number,
-        require: true
+        required: true
+    },
+    user_id: {
+        type:String,
+        required: true
     }
 }, {timestamps:true})
 

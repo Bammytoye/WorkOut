@@ -26,7 +26,7 @@ const Home = () => {
                 if (response.ok) {
                     dispatch({type: 'SET_WORKOUTS', payload: json});
                 } 
-                workout.createdAt
+                // workout.createdAt
         };
 
         if (user) {

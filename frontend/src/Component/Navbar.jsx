@@ -31,7 +31,7 @@ const Navbar = () => {
                                 <span>{user.email}</span>
                                 <button 
                                     onClick={handleClick}
-                                    className='bg-green-800 text-white p-2 rounded-lg font-bold border'
+                                    className='bg-green-800 ml-3 text-white p-2 rounded-lg font-bold border'
                                 >
                                     Log out
                                 </button>
