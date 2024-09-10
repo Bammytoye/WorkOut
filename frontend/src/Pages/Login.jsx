@@ -16,7 +16,7 @@ const Login = () => {
         <form
             action=""
             onSubmit={handleSubmit}
-            className='flex flex-col max-w-[400px] mx-auto my-20 p-16 bg-white rounded-full shadow-lg'
+            className='flex flex-col max-w-[400px] mx-auto my-20 p-16 bg-gray-100 rounded-md shadow-lg'
         >
             <h3 className='text-center mb-10 text-lg uppercase font-extrabold'>
                 Login
@@ -28,7 +28,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder='Enter your email'
-                className='p-2 mb-5 border-l-2 outline-none placeholder-italic border-b-2 border-black rounded-xl'
+                className='p-2 mb-5 border-l-2 bg-transparent outline-none placeholder-italic border-b-2 border-black rounded-xl'
             />
 
             <label>Password:</label>
@@ -37,7 +37,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 placeholder='Enter your correct password'
-                className='p-2 mb-5 border-l-2 outline-none placeholder-italic border-b-2 border-black rounded-xl'
+                className='p-2 mb-5 border-l-2 bg-transparent outline-none placeholder-italic border-b-2 border-black rounded-xl'
             />
             {error && <div className="text-red-500 mt-[-20px] text-sm text-center">{error}</div>}
 

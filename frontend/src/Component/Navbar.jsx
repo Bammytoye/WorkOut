@@ -16,13 +16,13 @@ const Navbar = () => {
             <div className='flex items-center justify-between bg-white max-w-[1400px] mx-auto py-3 px-16 shadow-lg'>
                 <div className='flex items-center'>
                     <Link to='/' className='text-[#333] no-underline'>
-                        <h1>Workout Buddy</h1>
+                        <h1>Zeke Workout</h1>
                     </Link>
                 </div>
             
                 <div className='flex space-x-5 items-center'>
-                    <Link to='/home' className='text-gray-800 hover:text-gray-400 '>Home</Link>
-                    <Link to='/aboutUs' className='text-gray-800 hover:text-gray-400 '>About Us</Link>
+                <Link to='/home' className='text-gray-800 hover:text-gray-400 border-b-2 border-transparent hover:border-green-500'>Home</Link>
+<Link to='/about' className='text-gray-800 hover:text-gray-400 border-b-2 border-transparent hover:border-green-500'>About Us</Link>
                     
                     
                     <div className="flex space-x-4 items-center">
@@ -40,8 +40,8 @@ const Navbar = () => {
 
                         {!user && (    
                             <div className="space-x-5">
-                                <Link to='/login' className='text-gray-800 hover:text-gray-400 '>Login</Link>
-                                <Link to='/signup' className='border-r-2 border-l-2 rounded-md border-[#1aac83] px-2'>Sign Up</Link>
+                                <Link to='/login' className='text-gray-800 hover:text-gray-400  hover:border-b-2 border-green-500'>Login</Link>
+                                <Link to='/signup' className='border-r-2 border-l-2 rounded-md border-[#1aac83] px-2 hover:border-b-2 border-green-500'>Sign Up</Link>
                             </div>
                         )}
                     </div>

@@ -16,7 +16,7 @@ const SignUp = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className='flex flex-col max-w-[400px] mx-auto my-20 p-5 bg-white rounded-lg shaow-lg'
+            className='flex flex-col max-w-[400px] mx-auto my-20 p-5 bg-gray-100 rounded-lg shadow-lg'
         >
             <h3 className='text-center mb-10 text-lg uppercase font-extrabold'>
                 Sign Up
@@ -28,7 +28,7 @@ const SignUp = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder='Enter your email'
-                className='p-2 mb-5 border-l-2 outline-none placeholder-italic border-b-2 border-black rounded-xl'
+                className='p-2 mb-5 bg-transparent outline-none placeholder-italic border-b-2 border-black rounded-xl'
             />
             {error && <div className='text-red-500 mt-[-20px] italic text-sm mx-auto'>{error}</div>}
 
@@ -39,7 +39,7 @@ const SignUp = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 placeholder='Enter your password'
-                className='p-2 mb-5 border-l-2 outline-none placeholder-italic border-b-2 border-black rounded-xl'
+                className='p-2 mb-5 bg-transparent outline-none placeholder-italic border-b-2 border-black rounded-xl'
             />
 
             <button
